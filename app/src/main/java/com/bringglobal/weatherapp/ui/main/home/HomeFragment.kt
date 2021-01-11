@@ -1,20 +1,14 @@
 package com.bringglobal.weatherapp.ui.main.home
 
-import android.app.Activity
-import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.cardview.widget.CardView
-import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bringglobal.weatherapp.R
-import com.bringglobal.weatherapp.ui.main.home.common.RecyclerViewAdapter
-import com.bringglobal.weatherapp.ui.main.map.MapFragment
+import com.bringglobal.weatherapp.ui.main.home.adapter.RecyclerViewHomeAdapter
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
@@ -60,7 +54,7 @@ class HomeFragment : Fragment() {
                 "Bucaramanga"
             )
 
-            adapter = RecyclerViewAdapter(itemLocations, context)
+            adapter = RecyclerViewHomeAdapter(itemLocations, context)
             rv_home.adapter = adapter
         }
     }
