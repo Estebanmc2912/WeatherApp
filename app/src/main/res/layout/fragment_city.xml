@@ -29,22 +29,21 @@
                     android:id="@+id/constraintLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingLeft="10dp"
+                    android:paddingLeft="@dimen/value_marginTop_cards"
                     android:paddingTop="20sp">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cl_city_image"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="50dp"
+                        android:layout_marginTop="@dimen/value_margin_imagecentral_city"
                         android:gravity="center"
                         android:orientation="vertical"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
                         <ImageView
-                            android:layout_width="110dp"
-                            android:layout_height="120dp"
+                            style="@style/style_imagecentral_city_fragment"
                             android:src="@drawable/ic_cloud1"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -55,12 +54,12 @@
 
                     <TextView
                         android:id="@+id/tv_city_temp"
-                        android:layout_width="200dp"
+                        android:layout_width="@dimen/value_supertext"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="20°"
-                        android:textColor="#fff"
-                        android:textSize="70dp"
+                        android:text="@string/value_temp_hint"
+                        android:textColor="@color/color_titles_subtitles"
+                        android:textSize="@dimen/value_supernumber"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/cl_city_image">
@@ -79,10 +78,10 @@
                             android:id="@+id/tv_city_location"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Bogotá"
+                            android:text="@string/value_card_tv_hint__home"
                             android:gravity="center"
                             tools:ignore="MissingConstraints"
-                            android:textColor="#fff"
+                            android:textColor="@color/color_titles_subtitles"
                             android:textSize="30sp"
                             android:textStyle="bold"></TextView>
                         <TextView
@@ -93,8 +92,8 @@
                             app:layout_constraintTop_toBottomOf="@+id/tv_city_location"
                             android:gravity="center"
                             android:text="Cloudy"
-                            android:textColor="#fff"
-                            android:textSize="20sp"
+                            android:textColor="@color/color_titles_subtitles"
+                            android:textSize="@dimen/value_subtexts_size"
                             android:textStyle="bold">
 
                         </TextView>
@@ -114,8 +113,7 @@
 
                         <ImageView
                             android:id="@+id/iv_city_title_rainchances"
-                            android:layout_width="90dp"
-                            android:layout_height="100dp"
+                            style="@style/style_images_city"
                             android:src="@drawable/ic_city_rain"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -146,8 +144,7 @@
 
                         <ImageView
                             android:id="@+id/iv_city_title_humidity"
-                            android:layout_width="90dp"
-                            android:layout_height="100dp"
+                            style="@style/style_images_city"
                             android:layout_marginStart="40dp"
                             android:src="@drawable/ic_city_humidity"
                             app:layout_constraintStart_toEndOf="@+id/iv_city_title_rainchances"
@@ -180,8 +177,7 @@
 
                         <ImageView
                             android:id="@+id/iv_city_title_wind"
-                            android:layout_width="90dp"
-                            android:layout_height="100dp"
+                            style="@style/style_images_city"
                             android:layout_marginStart="40dp"
                             android:src="@drawable/ic_city_wind"
                             app:layout_constraintStart_toEndOf="@+id/iv_city_title_humidity"
@@ -244,6 +240,18 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_fragment_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:clickable="true"
+            android:src="@android:drawable/ic_menu_help"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:backgroundTint="@color/white"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

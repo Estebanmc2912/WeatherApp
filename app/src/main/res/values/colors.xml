@@ -10,4 +10,5 @@
 
     <color name="blue_app">#0072FF</color>
     <color name="blue_secundaryapp">#00C6FF</color>
+    <color name="color_titles_subtitles">#fff</color>
 </resources>

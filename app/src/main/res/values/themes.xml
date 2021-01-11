@@ -1,19 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
     <style name="Theme.WeatherApp" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
-        <!-- Primary brand color. -->
         <item name="colorPrimary">@color/blue_app</item>
-        <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/blue_secundaryapp</item>
-        <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">@android:color/transparent</item>
-        <!-- Customize your theme here. -->
-
-
     </style>
 
     <style name="style_bottom_menu">
-
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_alignParentBottom">true</item>
@@ -21,10 +13,55 @@
         <item name="android:paddingTop">5dp</item>
         <item name="android:paddingBottom">10dp</item>
         <item name="android:itemBackground">@color/white</item>
+    </style>
+
+    <style name="style_card_city">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">180dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="style_card_city_image">
+        <item name="android:layout_width">53dp</item>
+        <item name="android:layout_height">60dp</item>
+    </style>
+
+    <style name="style_card_home">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">150dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:foreground">?actionBarItemBackground</item>
 
     </style>
 
+    <style name="style_card_iv_home">
+        <item name="android:layout_width">110dp</item>
+        <item name="android:layout_height">120dp</item>
+        <item name="android:src">@drawable/ic_cloud1</item>
+    </style>
 
+    <style name="style_card_tv_temp_home">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:text">40°</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">70dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="style_imagecentral_city_fragment">
+        <item name="android:layout_width">110dp</item>
+        <item name="android:layout_height">120dp</item>
+    </style>
+
+    <style name="style_images_city">
+        <item name="android:layout_width">90dp</item>
+        <item name="android:layout_height">100dp</item>
+
+    </style>
 
 
 </resources>

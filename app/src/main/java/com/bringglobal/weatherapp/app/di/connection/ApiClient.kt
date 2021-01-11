@@ -11,7 +11,7 @@ class ApiClient {
     public fun getClient():Retrofit{
         if (retrofit == null) {
             retrofit = Retrofit.Builder()
-                .baseUrl("https://api.openweathermap.org/data/2.5/")
+                .baseUrl(ApiEndpoint.BASEURL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
         }

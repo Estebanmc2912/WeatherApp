@@ -19,7 +19,7 @@
 
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tv_home_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Locations"
@@ -28,7 +28,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toTopOf="@id/sv_home_locations"
            android:textColor="@color/white"
-            android:textSize="30dp">
+            android:textSize="@dimen/value_supertitles">
 
         </TextView>
 
@@ -37,7 +37,7 @@
             android:id="@+id/sv_home_locations"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/tv_home_title"
             app:layout_constraintStart_toStartOf="parent"
             android:background="@color/white"
             app:layout_constraintBottom_toTopOf="@id/cl_rv_home"
@@ -51,8 +51,8 @@
             android:id="@+id/cl_rv_home"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:paddingBottom="100dp"
+            android:layout_marginTop="@dimen/value_marginTop_cards"
+            android:paddingBottom="@dimen/value_marginBottom_cards_fragment"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sv_home_locations"
@@ -66,19 +66,18 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton"
+            android:id="@+id/fab_fragment_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:src="@drawable/ic_floatingactionbutton"
+            android:src="@drawable/ic_floating_btn"
+            android:layout_marginBottom="@dimen/value_marginTop_cards"
+            android:layout_marginTop="@dimen/value_marginTop_cards"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:tint="@color/blue_secundaryapp"
-            android:background="@color/white"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"/>
+            android:backgroundTint="#ffff00"
+            />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,17 +1,23 @@
 package com.bringglobal.weatherapp.ui.main.map
 
+import android.location.Address
+import android.location.Geocoder
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.bringglobal.weatherapp.R
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.fragment_map.*
+import java.util.*
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,34 +29,49 @@ private const val ARG_PARAM2 = "param2"
  * Use the [MapFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class MapFragment : Fragment() , OnMapReadyCallback {
+class MapFragment : Fragment() , OnMapReadyCallback, GoogleMap.OnMapClickListener, GoogleMap.OnInfoWindowClickListener {
 
 
     private lateinit var googleMap: GoogleMap
+    private lateinit var marker : Marker
 
-    private var param1: String? = null
-    private var param2: String? = null
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
         mp_fragment_map.onCreate(savedInstanceState)
         mp_fragment_map.onResume()
         mp_fragment_map.getMapAsync(this)
-
 
     }
 
     override fun onMapReady(map: GoogleMap?) {
         map?.let {
             googleMap = it
+            var latlng : LatLng = LatLng(40.0, 40.0)
+
+            marker = googleMap.addMarker(
+                MarkerOptions()
+                    .position(latlng)
+                    .draggable(true)
+                    .title("Selection")
+                    .snippet("Lat:" + " Lng: ")
+            )
+
+            googleMap.setOnMapClickListener(this)
+            googleMap.setOnInfoWindowClickListener(this)
+            //googleMap.setOnMarkerClickListener(this)
+            //googleMap.setOnMarkerDragListener(this)
+            googleMap.moveCamera(CameraUpdateFactory.newLatLng(latlng))
+
         }
 
 
-
-
-
     }
+
+    /*override fun onMarkerClick(marker: Marker?): Boolean {
+        Toast.makeText(context,"My position" + marker?.position, Toast.LENGTH_SHORT).show()
+        return false
+    }*/
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -63,24 +84,66 @@ class MapFragment : Fragment() , OnMapReadyCallback {
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MapFragment.
-         */
-        // TODO: Rename and change types and number of parameters
+
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             MapFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
                 }
             }
     }
+
+    override fun onMapClick(p0: LatLng) {
+       // when the map is clicked
+
+        if(marker!=null){
+            marker.remove()
+        }
+
+        Toast.makeText(context, "map is clicked", Toast.LENGTH_SHORT).show()
+
+        var geocoder = Geocoder(context, Locale.getDefault())
+        var addresses: List<Address> = geocoder.getFromLocation(p0.latitude, p0.longitude, 1)
+
+        var cityName: String
+
+        if (addresses[0].locality.isNullOrBlank()){
+            cityName = addresses[0].adminArea
+        }else{
+            cityName = addresses[0].locality
+        }
+
+        var countryName: String = addresses[0].countryName
+
+        marker = googleMap.addMarker(
+            MarkerOptions()
+                .position(p0)
+                .draggable(true)
+                .title("Selection")
+                .snippet("City: " + cityName +
+                        "\nCountry: " + countryName)
+        )
+
+    }
+
+    override fun onInfoWindowClick(p0: Marker?) {
+        Toast.makeText(context, "Ifo window is clicked ", Toast.LENGTH_LONG).show()
+    }
+
+    /*override fun onMarkerDragStart(p0: Marker?) {
+
+    }
+
+    override fun onMarkerDrag(p0: Marker?) {
+
+    }
+
+    override fun onMarkerDragEnd(p0: Marker?) {
+
+        Toast.makeText(context, "Lat: " + marker.position.latitude + "\nLng: " + marker.position.longitude, Toast.LENGTH_SHORT).show()
+
+    }*/
 
 
 }

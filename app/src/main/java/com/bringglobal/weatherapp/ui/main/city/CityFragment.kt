@@ -1,6 +1,8 @@
 package com.bringglobal.weatherapp.ui.main.city
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,21 +18,16 @@ import com.bringglobal.weatherapp.ui.main.city.entity.EntityListMain
 import com.bringglobal.weatherapp.ui.main.city.entity.EntityListRain
 import com.bringglobal.weatherapp.ui.main.city.entity.EntityListWind
 import kotlinx.android.synthetic.main.fragment_city.*
+import kotlinx.android.synthetic.main.fragment_city.rv_city
+import kotlinx.android.synthetic.main.fragment_city.view.*
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_home.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "location"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [CityFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+private const val ARG_PARAM1 = "location"
 
 class CityFragment : Fragment() {
 
@@ -51,8 +48,17 @@ class CityFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_city, container, false)
+
+        var v : View = inflater.inflate(R.layout.fragment_city, container, false)
+
+        v.fab_fragment_city.setOnClickListener{
+            val url = "https://paulaximenadonosor.wixsite.com/my-site-1"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
+
+        return v
     }
 
 
@@ -136,8 +142,5 @@ class CityFragment : Fragment() {
 
     }
 
-    private fun getWeatherData5days(){
-
-    }
 
 }

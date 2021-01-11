@@ -2,6 +2,7 @@ package com.bringglobal.weatherapp.app.di.connection
 
 object ApiEndpoint {
     var BASEURL = "http://api.openweathermap.org/data/2.5/"
+    var ApiKey = "c6e381d8c7ff98f0fee43775817cf6ad"
     var CurrentWeather = "weather?"
     var ListWeather = "forecast?"
     var Daily = "forecast/daily?"

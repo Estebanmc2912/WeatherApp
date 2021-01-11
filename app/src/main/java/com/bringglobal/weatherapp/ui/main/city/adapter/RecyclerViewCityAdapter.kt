@@ -10,26 +10,21 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bringglobal.weatherapp.R
 import kotlinx.android.synthetic.main.card_fragment_city.view.*
-import kotlinx.android.synthetic.main.card_fragment_home.view.*
 
 
 class RecyclerViewCityAdapter (private val itemNames: Array<String>,
                                private val context: Context) : RecyclerView.Adapter<RecyclerViewCityAdapter.ViewHolder>() {
 
 
-    lateinit var vista : View
-
+    lateinit var vieww : View
 
     private val fragmentManager : FragmentManager ?= null
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-
         var day : TextView
-
         init {
             day = itemView.tv_card_city_day
         }
-
     }
 
 
@@ -37,10 +32,9 @@ class RecyclerViewCityAdapter (private val itemNames: Array<String>,
         parent: ViewGroup,
         viewType: Int
     ): RecyclerViewCityAdapter.ViewHolder {
-        vista = LayoutInflater.from(parent.context)
+        vieww = LayoutInflater.from(parent.context)
             .inflate(R.layout.card_fragment_city, parent, false)
-
-        return ViewHolder(vista)
+        return ViewHolder(vieww)
     }
 
     override fun onBindViewHolder(holder: RecyclerViewCityAdapter.ViewHolder, position: Int) {

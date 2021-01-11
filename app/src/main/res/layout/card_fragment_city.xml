@@ -7,12 +7,8 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="100dp"
-        android:layout_height="180dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginStart="15dp"
-
+        android:id="@+id/cv_fragment_city"
+        style="@style/style_card_city"
         app:cardCornerRadius="20dp"
         app:cardElevation="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,18 +33,18 @@
 
             <ImageView
                 android:id="@+id/im_card_city"
-                android:layout_width="53dp"
-                android:layout_height="60dp"
+                style="@style/style_card_city_image"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_card_city_day"
-                app:srcCompat="@drawable/ic_city_rain" />
+                app:srcCompat="@drawable/ic_city_rain"
+                tools:ignore="VectorDrawableCompat" />
 
             <TextView
                 android:id="@+id/tv_card_city_temp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="15°"
+                android:text="@string/value_cv_city_temp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/im_card_city" />
@@ -57,9 +53,9 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
+                android:layout_marginStart="@dimen/value_card_city_text_information"
+                android:layout_marginTop="@dimen/value_card_city_text_information"
+                android:layout_marginEnd="@dimen/value_card_city_text_information"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_card_city_temp">
 
@@ -68,14 +64,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="Rain  "
+                    android:text="@string/value_cv_city_tv_rain"
                     tools:ignore="MissingConstraints" />
 
                 <TextView
                     android:id="@+id/tv_card_text_city_rain"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="60%"
+                    android:text="@string/value_cv_tv_city_hint_rain"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/tv_card_title_city_rain" />
 
@@ -83,7 +79,7 @@
                     android:id="@+id/tv_card_title_city_hum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Humi"
+                    android:text="@string/value_cv_tv_city_humi"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_card_title_city_rain" />
 
@@ -91,8 +87,7 @@
                     android:id="@+id/tv_card_text_city_hum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="18%"
-
+                    android:text="@string/value_cv_tv_text_hum"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/tv_card_title_city_hum"
                     app:layout_constraintTop_toBottomOf="@+id/tv_card_text_city_rain" />
@@ -101,7 +96,7 @@
                     android:id="@+id/tv_card_title_city_wind"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Wind "
+                    android:text="@string/value_cv_tv_wind"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_card_title_city_hum" />
 
@@ -109,7 +104,7 @@
                     android:id="@+id/tv_card_text_city_wind"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="40%"
+                    android:text="@string/value_cv_hint_tv_rain"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/tv_card_title_city_wind"
                     app:layout_constraintTop_toBottomOf="@+id/tv_card_text_city_hum" />

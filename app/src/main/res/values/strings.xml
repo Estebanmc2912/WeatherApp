@@ -7,4 +7,14 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="map_key">AIzaSyBRwEZm4_BffBN-wwHtmx2SeteMxl07Mj8</string>
+    <string name="value_cv_city_temp">15°</string>
+    <string name="value_cv_city_tv_rain">Rain</string>
+    <string name="value_cv_tv_city_hint_rain">60%</string>
+    <string name="value_cv_tv_city_humi">Humi</string>
+    <string name="value_cv_tv_text_hum">18%</string>
+    <string name="value_cv_tv_wind">Wind</string>
+    <string name="value_cv_hint_tv_rain">40%</string>
+    <string name="value_card_tv_hint__home">Bogotá</string>
+    <string name="card_home_tv_hint_weather">Sunny</string>
+    <string name="value_temp_hint">20°</string>
 </resources>

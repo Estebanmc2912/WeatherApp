@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <dimen name="value_card_city_text_information">10dp</dimen>
+    <dimen name="value_subtexts_size">20sp</dimen>
+    <dimen name="value_subtext">14sp</dimen>
+    <dimen name="value_supertitles">30dp</dimen>
+    <dimen name="value_marginTop_cards">10dp</dimen>
+    <dimen name="value_marginBottom_cards_fragment">100dp</dimen>
+    <dimen name="value_margin_imagecentral_city">50dp</dimen>
+    <dimen name="value_supertext">200dp</dimen>
+    <dimen name="value_supernumber">70sp</dimen>
+</resources>

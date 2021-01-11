@@ -8,15 +8,11 @@
 
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:clickable="true"
-        android:elevation="4dp"
+        style="@style/style_card_home"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:foreground="?actionBarItemBackground"
         app:cardCornerRadius="20dp"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -32,9 +28,7 @@
                 android:paddingLeft="10dp">
 
                 <ImageView
-                    android:layout_width="110dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/ic_cloud1" />
+                    style="@style/style_card_iv_home" />
             </LinearLayout>
 
             <LinearLayout
@@ -43,13 +37,16 @@
                 android:paddingLeft="10dp">
 
                 <TextView
+                    style="style_card_tv_temp_home"
+                    android:id="@+id/tv_card_city_temp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center|left"
                     android:text="40°"
                     android:textColor="#fff"
                     android:textSize="70dp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    />
             </LinearLayout>
 
             <LinearLayout
@@ -68,9 +65,9 @@
                         android:id="@+id/tv_card_home_location"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Bogotá"
-                        android:textColor="#fff"
-                        android:textSize="20sp"
+                        android:text="@string/value_card_tv_hint__home"
+                        android:textColor="@color/color_titles_subtitles"
+                        android:textSize="@dimen/value_subtexts_size"
                         android:textStyle="bold" />
 
                     <LinearLayout
@@ -83,9 +80,9 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:gravity="center|left"
-                            android:text="Sunny"
-                            android:textColor="#fff"
-                            android:textSize="14sp" />
+                            android:text="@string/card_home_tv_hint_weather"
+                            android:textColor="@color/color_titles_subtitles"
+                            android:textSize="@dimen/value_subtext" />
 
                     </LinearLayout>
 

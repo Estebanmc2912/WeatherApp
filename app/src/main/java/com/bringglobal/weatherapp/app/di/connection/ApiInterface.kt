@@ -6,7 +6,8 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface ApiInterface {
-    @GET("weather?appid=c6e381d8c7ff98f0fee43775817cf6ad&units=metric")
+
+    @GET("weather?" + "appid=c6e381d8c7ff98f0fee43775817cf6ad&units=metric")
     fun getWeatherMainData(@Query("q") name: String?): Call<EntityListMain>
 
     @GET("weather?appid=c6e381d8c7ff98f0fee43775817cf6ad&units=metric")

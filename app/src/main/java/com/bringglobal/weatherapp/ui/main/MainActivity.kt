@@ -21,7 +21,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 import kotlin.math.log
 
-class MainActivity : BaseActivity<MainContract.View, MainPresenter>(), MainContract.View , ClickEventHandler {
+class MainActivity : BaseActivity<MainContract.View, MainPresenter>(), MainContract.View, ClickEventHandler  {
 
     @Inject
     override lateinit var presenter: MainPresenter
@@ -95,11 +95,13 @@ class MainActivity : BaseActivity<MainContract.View, MainPresenter>(), MainContr
 
         }
 
-    override fun viewFollow(holder: View, enter: String) {
+    override fun viewFollowCity(holder: View, enter: String) {
         makeCurrentFragmentArgument(cityFragment, enter)
     }
 
-
+    override fun viewFollowMap() {
+        makeCurrentFragment(mapFragment)
+    }
 
 
 }
