@@ -1,16 +1,15 @@
-package com.bringglobal.weatherapp.ui.splash.di
+package com.bringglobal.weatherapp.ui.splash
 
 import android.content.Intent
-import com.bringglobal.weatherapp.ui.MainActivity
-import com.bringglobal.weatherapp.ui.splash.SplashActivity
-import com.bringglobal.weatherapp.ui.splash.SplashContract
+import com.bringglobal.weatherapp.ui.main.MainActivity
 
 class SplashRouter(private val activity: SplashActivity) : SplashContract.Router {
 
     override fun openMain() {
-        //MainActivity.launch(activity)
-        //activity.startActivity(Intent(activity,MainActivity::class.java))
+        activity.startActivity(Intent(activity, MainActivity::class.java))
+        activity.finish()
 
+        //MainActivity.launch(activity)
         //MainActivity.launch(activity)
         //activity.finish()
     }

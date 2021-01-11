@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+
+    <item
+        android:id="@+id/item_navigationbar_home"
+        android:icon="@drawable/ic_navigationbar_home"
+        android:title="@string/home"
+        />
+
+    <item
+        android:id="@+id/item_navigationbar_map"
+        android:icon="@drawable/ic_navigationbar_map"
+        android:title="@string/map"
+        />
+
+    <item
+        android:id="@+id/item_navigationbar_city"
+        android:icon="@drawable/ic_navigationbar_city"
+        android:title="@string/city"
+        />
+
+    <item
+        android:id="@+id/item_navigationbar_settings"
+        android:icon="@drawable/ic_navigationbar_settings"
+        android:title="@string/settings"
+        />
+
+
 </menu>

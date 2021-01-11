@@ -1,12 +1,14 @@
-package com.bringglobal.weatherapp.ui.splash.di
+package com.bringglobal.weatherapp.ui.splash
 
 import android.os.Handler
+import com.bringglobal.weatherapp.R
+import com.bringglobal.weatherapp.ui.common.BasePresenter
 import com.bringglobal.weatherapp.ui.splash.SplashContract
 
 class SplashPresenter(private val router: SplashContract.Router) : BasePresenter<SplashContract.View>(), SplashContract.Presenter {
 
     companion object {
-        private const val SPLASH_DISPLAY_TIME = 400
+        private const val SPLASH_DISPLAY_TIME : Long = 4000
     }
 
     override var view: SplashContract.View? = null
@@ -21,15 +23,9 @@ class SplashPresenter(private val router: SplashContract.Router) : BasePresenter
 
     override fun onViewCreated() {
 
-        val r = object : Runnable {
-            override fun run() {
-            }
-        }
-
         Handler().postDelayed({
             router.openMain()
-        }, 4500)
-        view?.showVideo("android.resource://"+ view?.packageName() +"/"+ R.raw.splash, r, 400)
+        }, SPLASH_DISPLAY_TIME)
 
     }
 

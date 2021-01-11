@@ -1,10 +1,30 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.WeatherApp" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="Theme.WeatherApp" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryDark">@color/purple_700</item>
-        <item name="colorAccent">@color/teal_200</item>
+        <item name="colorPrimary">@color/blue_app</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/blue_secundaryapp</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@android:color/transparent</item>
         <!-- Customize your theme here. -->
+
+
     </style>
+
+    <style name="style_bottom_menu">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:itemBackground">@color/white</item>
+
+    </style>
+
+
+
+
 </resources>

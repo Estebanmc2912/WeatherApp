@@ -1,4 +1,5 @@
 package com.bringglobal.weatherapp.ui.common
 
-class BasePresenter {
+open class BasePresenter <V: BaseView> {
+    open var view : V? = null
 }
