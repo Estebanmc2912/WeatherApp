@@ -17,4 +17,15 @@
     <string name="value_card_tv_hint__home">Bogotá</string>
     <string name="card_home_tv_hint_weather">Sunny</string>
     <string name="value_temp_hint">20°</string>
+    <string name="value_dialog_map_current_information">Current Information</string>
+    <string name="value_dialog_tv_city_name">City Name:</string>
+    <string name="value_dialog_tv_namecity">namecity</string>
+    <string name="value_dialog_tv_country_name">Country Name:</string>
+    <string name="value_dialog_hint_countryname">countryname</string>
+    <string name="value_dialog_tv_latitude">Latitude:</string>
+    <string name="value_dialog_tv_latitudehint">latitudehint</string>
+    <string name="value_dialog_tv_longitude">Longitude:</string>
+    <string name="value_dialog_tv_longitudehint">longitudehint</string>
+    <string name="value_dialog_btn_accept">Accept</string>
+    <string name="value_dialog_btn_decline">Decline</string>
 </resources>

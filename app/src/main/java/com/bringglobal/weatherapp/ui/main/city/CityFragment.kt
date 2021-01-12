@@ -27,14 +27,11 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-private const val ARG_PARAM1 = "location"
+private const val ARG_PARAM1 = "cityname"
 
 class CityFragment : Fragment() {
 
     private var param1: String? = null
-    private var layoutManager : RecyclerView.LayoutManager?=null
-    private var adapter : RecyclerView.Adapter<RecyclerView.ViewHolder> ?= null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,15 +56,6 @@ class CityFragment : Fragment() {
         }
 
         return v
-    }
-
-
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        arguments?.getString(ARG_PARAM1)?.let {
-            getWeatherData(it)
-        }
     }
 
     private fun getWeatherData(name: String?) {
@@ -110,8 +98,6 @@ class CityFragment : Fragment() {
                 }else{
                     tv_city_text_wind.text = rta + '%'
                 }
-
-
             }
 
             override fun onFailure(call: Call<EntityListWind>, t: Throwable) {}
@@ -132,7 +118,7 @@ class CityFragment : Fragment() {
                 "Monday",
                 "Tuesday",
                 "Wednesday",
-                "Thusday",
+                "Thursday",
                 "Friday",
             )
 

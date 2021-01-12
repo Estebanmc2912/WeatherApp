@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import com.bringglobal.weatherapp.R
+import com.bringglobal.weatherapp.ui.main.map.common.DialogMapFragment
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -35,6 +37,10 @@ class MapFragment : Fragment() , OnMapReadyCallback, GoogleMap.OnMapClickListene
     private lateinit var googleMap: GoogleMap
     private lateinit var marker : Marker
 
+    private  var latitude : String = ""
+    private  var longitude : String = ""
+    private  var cityname : String = ""
+    private  var countryname : String = ""
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -47,31 +53,24 @@ class MapFragment : Fragment() , OnMapReadyCallback, GoogleMap.OnMapClickListene
     override fun onMapReady(map: GoogleMap?) {
         map?.let {
             googleMap = it
-            var latlng : LatLng = LatLng(40.0, 40.0)
+            var latlng : LatLng = LatLng(40.73, -73.935)
 
             marker = googleMap.addMarker(
                 MarkerOptions()
                     .position(latlng)
                     .draggable(true)
-                    .title("Selection")
+                    .title("Current Selection")
                     .snippet("Lat:" + " Lng: ")
             )
 
             googleMap.setOnMapClickListener(this)
             googleMap.setOnInfoWindowClickListener(this)
-            //googleMap.setOnMarkerClickListener(this)
-            //googleMap.setOnMarkerDragListener(this)
             googleMap.moveCamera(CameraUpdateFactory.newLatLng(latlng))
 
         }
 
 
     }
-
-    /*override fun onMarkerClick(marker: Marker?): Boolean {
-        Toast.makeText(context,"My position" + marker?.position, Toast.LENGTH_SHORT).show()
-        return false
-    }*/
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -95,40 +94,34 @@ class MapFragment : Fragment() , OnMapReadyCallback, GoogleMap.OnMapClickListene
     }
 
     override fun onMapClick(p0: LatLng) {
-       // when the map is clicked
-
-        if(marker!=null){
+         if(marker!=null){
             marker.remove()
         }
-
-        Toast.makeText(context, "map is clicked", Toast.LENGTH_SHORT).show()
+        latitude = p0.latitude.toString()
+        longitude = p0.longitude.toString()
 
         var geocoder = Geocoder(context, Locale.getDefault())
         var addresses: List<Address> = geocoder.getFromLocation(p0.latitude, p0.longitude, 1)
 
-        var cityName: String
+        cityname = addresses[0].adminArea
 
-        if (addresses[0].locality.isNullOrBlank()){
-            cityName = addresses[0].adminArea
-        }else{
-            cityName = addresses[0].locality
-        }
-
-        var countryName: String = addresses[0].countryName
+        countryname = addresses[0].countryName
 
         marker = googleMap.addMarker(
             MarkerOptions()
                 .position(p0)
                 .draggable(true)
                 .title("Selection")
-                .snippet("City: " + cityName +
-                        "\nCountry: " + countryName)
+                .snippet("City: " + cityname +
+                        "\nCountry: " + countryname)
         )
 
     }
 
     override fun onInfoWindowClick(p0: Marker?) {
-        Toast.makeText(context, "Ifo window is clicked ", Toast.LENGTH_LONG).show()
+        var dialogMapFragment : DialogMapFragment = DialogMapFragment(latitude,longitude,cityname,countryname)
+        dialogMapFragment.show( (context as FragmentActivity).supportFragmentManager, "Map Dialog" )
+
     }
 
     /*override fun onMarkerDragStart(p0: Marker?) {

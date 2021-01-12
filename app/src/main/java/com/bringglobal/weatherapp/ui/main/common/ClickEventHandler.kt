@@ -6,4 +6,5 @@ import android.view.View
 interface ClickEventHandler {
     fun viewFollowCity(holder: View, string: String)
     fun viewFollowMap()
+    fun viewFollowHome(string: String)
 }

@@ -47,8 +47,6 @@ class MainActivity : BaseActivity<MainContract.View, MainPresenter>(), MainContr
         presenter.bindView(this)
         presenter.onViewCreated()
 
-
-
         makeCurrentFragment(homeFragment)
 
         bottom_navigation.setOnNavigationItemSelectedListener {
@@ -87,7 +85,7 @@ class MainActivity : BaseActivity<MainContract.View, MainPresenter>(), MainContr
     private fun makeCurrentFragmentArgument(fragment: Fragment, arg : String) =
         supportFragmentManager.beginTransaction().apply {
             var b = Bundle().apply {
-                putString("location",arg)
+                putString("cityname",arg)
             }
             fragment.arguments = b
             replace(R.id.fl_wrapper, fragment)
@@ -101,6 +99,11 @@ class MainActivity : BaseActivity<MainContract.View, MainPresenter>(), MainContr
 
     override fun viewFollowMap() {
         makeCurrentFragment(mapFragment)
+    }
+
+    override fun viewFollowHome(string: String) {
+        makeCurrentFragmentArgument(homeFragment, string)
+
     }
 
 

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    >
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="2dp"
+            android:layout_marginEnd="@dimen/value_margin_cards"
+            android:layout_marginStart="@dimen/value_margin_cards"
+            android:layout_marginTop="@dimen/value_margin_cards"
+            android:layout_marginBottom="@dimen/value_margin_cards"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp">
+
+                <TextView
+                    android:id="@+id/tv_dialog_map_currentinfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/value_margin_cards"
+                    android:text="@string/value_dialog_map_current_information"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </TextView>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+
+                    android:id="@+id/cl_dialog_map_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/value_margin_cards"
+                    android:layout_marginStart="@dimen/value_margin_cards"
+                    android:layout_marginTop="@dimen/value_margin_cards"
+                    android:layout_marginBottom="@dimen/value_margin_cards"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_dialog_map_currentinfo">
+
+                    <TextView
+                        android:id="@+id/tv_dialog_map_title_cityname"
+                        style="@style/style_tv_dialog_map"
+                        android:text="@string/value_dialog_tv_city_name"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"></TextView>
+
+                    <TextView
+                        android:id="@+id/tv_dialog_map_txt_cityname"
+                        style="@style/style_tv_dialog_map"
+                        android:hint="@string/value_dialog_tv_namecity"
+                        app:layout_constraintStart_toEndOf="@+id/tv_dialog_map_title_cityname"
+                        app:layout_constraintTop_toTopOf="@+id/tv_dialog_map_title_cityname">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tv_dialog_map_title_countryname"
+                        style="@style/style_tv_dialog_map"
+                        android:text="@string/value_dialog_tv_country_name"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_dialog_map_title_cityname">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tv_dialog_map_txt_countryname"
+                        style="@style/style_tv_dialog_map"
+                        android:hint="@string/value_dialog_hint_countryname"
+                        app:layout_constraintStart_toEndOf="@+id/tv_dialog_map_title_countryname"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_dialog_map_txt_cityname">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tv_dialog_map_title_latitude"
+                        style="@style/style_tv_dialog_map"
+                        android:text="@string/value_dialog_tv_latitude"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_dialog_map_title_countryname">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tv_dialog_map_txt_latitude"
+                        style="@style/style_tv_dialog_map"
+                        android:hint="@string/value_dialog_tv_latitudehint"
+                        app:layout_constraintStart_toEndOf="@+id/tv_dialog_map_title_latitude"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_dialog_map_txt_countryname">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tv_dialog_map_title_longitude"
+                        style="@style/style_tv_dialog_map"
+                        android:text="@string/value_dialog_tv_longitude"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_dialog_map_title_latitude">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/tv_dialog_map_txt_longitude"
+                        style="@style/style_tv_dialog_map"
+                        android:hint="@string/value_dialog_tv_longitudehint"
+                        app:layout_constraintStart_toEndOf="@+id/tv_dialog_map_title_longitude"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_dialog_map_txt_latitude"></TextView>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_dialog_map_accept"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_dialog_map_info">
+
+                    <Button
+                        android:id="@+id/bnt_dialog_map_accept"
+                        style="@style/style_tv_dialog_map"
+                        android:text="@string/value_dialog_btn_accept"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"></Button>
+
+                    <Button
+                        android:id="@+id/bnt_dialog_map_decline"
+                        style="@style/style_tv_dialog_map"
+                        android:text="@string/value_dialog_btn_decline"
+                        app:layout_constraintStart_toEndOf="@+id/bnt_dialog_map_accept"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </Button>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
