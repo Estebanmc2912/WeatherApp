@@ -10,7 +10,6 @@ import com.bringglobal.weatherapp.R
 
 class SettingsFragment : Fragment() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }

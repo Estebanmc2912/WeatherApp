@@ -26,11 +26,7 @@ import java.util.*
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MapFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class MapFragment : Fragment() , OnMapReadyCallback, GoogleMap.OnMapClickListener, GoogleMap.OnInfoWindowClickListener {
 
 
@@ -55,20 +51,12 @@ class MapFragment : Fragment() , OnMapReadyCallback, GoogleMap.OnMapClickListene
             googleMap = it
             var latlng : LatLng = LatLng(40.73, -73.935)
 
-            marker = googleMap.addMarker(
-                MarkerOptions()
-                    .position(latlng)
-                    .draggable(true)
-                    .title("Current Selection")
-                    .snippet("Lat:" + " Lng: ")
-            )
+            setGeoLocationInfo(latlng)
 
             googleMap.setOnMapClickListener(this)
             googleMap.setOnInfoWindowClickListener(this)
             googleMap.moveCamera(CameraUpdateFactory.newLatLng(latlng))
-
         }
-
 
     }
 
@@ -97,25 +85,27 @@ class MapFragment : Fragment() , OnMapReadyCallback, GoogleMap.OnMapClickListene
          if(marker!=null){
             marker.remove()
         }
+
+        setGeoLocationInfo(p0)
+    }
+
+    fun setGeoLocationInfo(p0: LatLng){
         latitude = p0.latitude.toString()
         longitude = p0.longitude.toString()
-
         var geocoder = Geocoder(context, Locale.getDefault())
         var addresses: List<Address> = geocoder.getFromLocation(p0.latitude, p0.longitude, 1)
 
         cityname = addresses[0].adminArea
-
         countryname = addresses[0].countryName
 
         marker = googleMap.addMarker(
             MarkerOptions()
                 .position(p0)
                 .draggable(true)
-                .title("Selection")
+                .title("Current Selection")
                 .snippet("City: " + cityname +
                         "\nCountry: " + countryname)
         )
-
     }
 
     override fun onInfoWindowClick(p0: Marker?) {
@@ -123,20 +113,5 @@ class MapFragment : Fragment() , OnMapReadyCallback, GoogleMap.OnMapClickListene
         dialogMapFragment.show( (context as FragmentActivity).supportFragmentManager, "Map Dialog" )
 
     }
-
-    /*override fun onMarkerDragStart(p0: Marker?) {
-
-    }
-
-    override fun onMarkerDrag(p0: Marker?) {
-
-    }
-
-    override fun onMarkerDragEnd(p0: Marker?) {
-
-        Toast.makeText(context, "Lat: " + marker.position.latitude + "\nLng: " + marker.position.longitude, Toast.LENGTH_SHORT).show()
-
-    }*/
-
 
 }

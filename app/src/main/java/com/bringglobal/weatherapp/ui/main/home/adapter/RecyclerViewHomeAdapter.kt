@@ -44,11 +44,7 @@ class RecyclerViewHomeAdapter (private val itemLocations: MutableList<CardViewEn
 
     override fun onBindViewHolder(holder: RecyclerViewHomeAdapter.ViewHolder, position: Int) {
        holder.location.text = itemLocations.get(position).cityname
-
-
     }
-
-
 
     override fun getItemCount(): Int {
         return itemLocations.size

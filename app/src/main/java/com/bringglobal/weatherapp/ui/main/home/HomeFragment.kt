@@ -41,11 +41,11 @@ class HomeFragment : Fragment() , SearchView.OnQueryTextListener {
             param1 = it.getString(ARG_PARAM1)
         }
         if (!param1.isNullOrBlank()){
-            var item : CardViewEntity = CardViewEntity( (param1 as String), "20", "sunny")
+            var item : CardViewEntity = CardViewEntity( (param1 as String), "°", "sunny")
             itemLocations?.add(item)
             restrictionsame = LinkedHashSet<CardViewEntity>(itemLocations).toMutableList()
         }else{
-            var item : CardViewEntity = CardViewEntity( "Bogotá", "20", "sunny")
+            var item : CardViewEntity = CardViewEntity( "Bogotá", "°", "sunny")
             itemLocations?.add(item)
             restrictionsame = LinkedHashSet<CardViewEntity>(itemLocations).toMutableList()
         }
